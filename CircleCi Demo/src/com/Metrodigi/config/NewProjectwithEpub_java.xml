@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="5" verbose="1" name="NewProjectwithEpub_java"
+	annotations="JDK">
+	<test name="NewProjectwithEpub_java" junit="false" preserve-order="true">
+		<classes>
+			<class name="com.Metrodigi.scripts.NewProjectwithEpub_java">	
+				<methods>
+            		<include name="ProjectwithEpub"/>					
+	         	</methods>
+	         </class>		
+		</classes>		
+	</test>
+</suite>

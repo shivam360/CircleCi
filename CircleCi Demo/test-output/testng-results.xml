@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Enter username 'nishantd@360logica.com' into username text box '//input[@id='username']']]>
+    </line>
+    <line>
+      <![CDATA[Enter password 'Chaucer!' into password text box '//input[@id='password']']]>
+    </line>
+    <line>
+      <![CDATA[Click on Log in button://div[contains(@class,'login-form-submit-group')]//button]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="38754" started-at="2017-01-11T11:24:37Z" finished-at="2017-01-11T11:25:16Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="38754" started-at="2017-01-11T11:24:37Z" finished-at="2017-01-11T11:25:16Z">
+      <class name="com.Metrodigi.scripts.DeleteCollection_java">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.Metrodigi.scripts.DeleteCollection_java@32d2fa64]" name="setUp" is-config="true" duration-ms="2421" started-at="2017-01-11T16:54:37Z" finished-at="2017-01-11T16:54:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="DeleteCollection()[pri:0, instance:com.Metrodigi.scripts.DeleteCollection_java@32d2fa64]" name="DeleteCollection" duration-ms="31206" started-at="2017-01-11T16:54:39Z" finished-at="2017-01-11T16:55:11Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Element Locator ://div[@id='user-name-lnk'] Not found expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Element Locator ://div[@id='user-name-lnk'] Not found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.Metrodigi.util.DriverHelper.getText(DriverHelper.java:300)
+	at com.Metrodigi.pagehelper.LoginPageHelper.Login(LoginPageHelper.java:73)
+	at com.Metrodigi.scripts.DeleteCollection_java.DeleteCollection(DeleteCollection_java.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[Enter username 'nishantd@360logica.com' into username text box '//input[@id='username']']]>
+            </line>
+            <line>
+              <![CDATA[Enter password 'Chaucer!' into password text box '//input[@id='password']']]>
+            </line>
+            <line>
+              <![CDATA[Click on Log in button://div[contains(@class,'login-form-submit-group')]//button]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- DeleteCollection -->
+        <test-method status="PASS" signature="endMethods()[pri:0, instance:com.Metrodigi.scripts.DeleteCollection_java@32d2fa64]" name="endMethods" is-config="true" duration-ms="15" started-at="2017-01-11T16:55:11Z" finished-at="2017-01-11T16:55:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endMethods -->
+        <test-method status="PASS" signature="afterMainMethod()[pri:0, instance:com.Metrodigi.scripts.DeleteCollection_java@32d2fa64]" name="afterMainMethod" is-config="true" duration-ms="5089" started-at="2017-01-11T16:55:11Z" finished-at="2017-01-11T16:55:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMainMethod -->
+      </class> <!-- com.Metrodigi.scripts.DeleteCollection_java -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

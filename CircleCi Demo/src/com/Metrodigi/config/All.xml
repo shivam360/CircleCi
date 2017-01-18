@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Metrodigi" parallel="methods">
+	<suite-files>
+		<suite-file path="Login_java.xml"></suite-file>
+		<suite-file path="NewProject_java.xml"></suite-file>
+		<suite-file path="NewCollection_java.xml"></suite-file>
+		<suite-file path="NewProjectwithDocument_java.xml"></suite-file>
+        <suite-file path="OpenProject_java.xml"></suite-file>
+        <suite-file path="NewProjectwithMediafiles_java.xml"></suite-file>
+		<suite-file path="NewProjectinExistingCollection_java.xml"></suite-file>
+		<suite-file path="DeleteProject_java.xml"></suite-file>
+		<suite-file path="DeleteCollection_java.xml"></suite-file>
+		<suite-file path="AddMembers_java.xml"></suite-file>
+		<suite-file path="NewProjectwithEpub_java.xml"></suite-file>
+		</suite-files>
+</suite>
