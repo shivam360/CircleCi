@@ -6,9 +6,23 @@
 	  
 	dependencies:
 	 pre:
+      - sudo pip install selenium/base
+      - sudo pip install selenium/hub
+      - sudo pip install selenium/standalone-chrome
+      - sudo pip install selenium/node-chrome-debug
+      - sudo pip install selenium/node-chrome
+      - sudo pip install selenium/node-base
+      - sudo pip install selenium/hub
+      - sudo pip install selenium/standalone-chrome-debug
+      - sudo pip install selenium/standalone-chrome
+      - sudo pip install selenium/node-chrome-debug
 	  - sudo pip install docker-compose
 	  
 	test:
 	 override:
+      - docker run -d -P selenium/standalone-chrome
+      - docker run -d -P --name selenium-hub selenium/hub
+      - docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug
+      - docker run -d -P selenium/standalone-chrome-debug
 	  - docker-compose up -d
 	  - docker-compose run dockerapp java Login_java.java
