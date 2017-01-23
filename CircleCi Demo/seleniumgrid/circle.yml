@@ -5,7 +5,7 @@
 	  - docker
       
     java:
-     verion: openjdk8
+     version: openjdk8
       	  
 	dependencies:
 	 pre:
