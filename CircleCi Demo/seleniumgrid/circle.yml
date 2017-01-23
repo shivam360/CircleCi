@@ -3,26 +3,29 @@
 	  - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
 	 services:
 	  - docker
-	  
+      
+    java:
+     verion: openjdk8
+      	  
 	dependencies:
 	 pre:
-      - sudo pip install selenium/base
-      - sudo pip install selenium/hub
-      - sudo pip install selenium/standalone-chrome
-      - sudo pip install selenium/node-chrome-debug
-      - sudo pip install selenium/node-chrome
-      - sudo pip install selenium/node-base
-      - sudo pip install selenium/hub
-      - sudo pip install selenium/standalone-chrome-debug
-      - sudo pip install selenium/standalone-chrome
-      - sudo pip install selenium/node-chrome-debug
-	  - sudo pip install docker-compose
-	  
-	test:
-	 override:
+      - selenium/base install
+      - selenium/hub install 
+      - selenium/standalone-chrome install 
+      - selenium/node-chrome-debug install 
+      - selenium/node-chrome install 
+      - selenium/node-base install 
+      - selenium/hub install 
+      - selenium/standalone-chrome-debug install 
+      - selenium/standalone-chrome install 
+      - selenium/node-chrome-debug install 
+	  - docker-compose install 
       - docker run -d -P selenium/standalone-chrome
       - docker run -d -P --name selenium-hub selenium/hub
       - docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug
       - docker run -d -P selenium/standalone-chrome-debug
+	  
+	test:
+	 override:      
 	  - docker-compose up -d
 	  - docker-compose run dockerapp java Login_java.java
