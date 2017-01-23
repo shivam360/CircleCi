@@ -9,17 +9,17 @@
       	  
 	dependencies:
 	 pre:
-      - selenium/base install
-      - selenium/hub install 
-      - selenium/standalone-chrome install 
-      - selenium/node-chrome-debug install 
-      - selenium/node-chrome install 
-      - selenium/node-base install 
-      - selenium/hub install 
-      - selenium/standalone-chrome-debug install 
-      - selenium/standalone-chrome install 
-      - selenium/node-chrome-debug install 
-	  - docker-compose install 
+      - sudo apt-get install selenium/base 
+      - sudo apt-get install selenium/hub  
+      - sudo apt-get install selenium/standalone-chrome  
+      - sudo apt-get install selenium/node-chrome-debug  
+      - sudo apt-get install selenium/node-chrome  
+      - sudo apt-get install selenium/node-base  
+      - sudo apt-get install selenium/hub  
+      - sudo apt-get install selenium/standalone-chrome-debug  
+      - sudo apt-get install selenium/standalone-chrome  
+      - sudo apt-get install selenium/node-chrome-debug  
+	  - sudo apt-get install docker-compose 
       - docker run -d -P selenium/standalone-chrome
       - docker run -d -P --name selenium-hub selenium/hub
       - docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug
