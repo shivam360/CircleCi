@@ -5,17 +5,19 @@
 	  - docker
       
     java:
-     version: openjdk8
+     version: OpenJDK 8
       	  
 	dependencies:
 	 pre:
+      - sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
+      - sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+      - echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
       - sudo apt-get install selenium/base 
       - sudo apt-get install selenium/hub  
       - sudo apt-get install selenium/standalone-chrome  
       - sudo apt-get install selenium/node-chrome-debug  
       - sudo apt-get install selenium/node-chrome  
       - sudo apt-get install selenium/node-base  
-      - sudo apt-get install selenium/hub  
       - sudo apt-get install selenium/standalone-chrome-debug  
       - sudo apt-get install selenium/standalone-chrome  
       - sudo apt-get install selenium/node-chrome-debug  
