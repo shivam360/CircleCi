@@ -1,33 +1,27 @@
-    machine:
-	 pre:
-	  - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
-	 services:
-	  - docker
-      
-    java:
-     version: OpenJDK 8
-      	  
-	dependencies:
-	 pre:
-      - sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java
-      - sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
-      - echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc
-      - sudo apt-get install selenium/base 
-      - sudo apt-get install selenium/hub  
-      - sudo apt-get install selenium/standalone-chrome  
-      - sudo apt-get install selenium/node-chrome-debug  
-      - sudo apt-get install selenium/node-chrome  
-      - sudo apt-get install selenium/node-base  
-      - sudo apt-get install selenium/standalone-chrome-debug  
-      - sudo apt-get install selenium/standalone-chrome  
-      - sudo apt-get install selenium/node-chrome-debug  
-	  - sudo apt-get install docker-compose 
-      - docker run -d -P selenium/standalone-chrome
-      - docker run -d -P --name selenium-hub selenium/hub
-      - docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug
-      - docker run -d -P selenium/standalone-chrome-debug
-	  
-	test:
-	 override:      
-	  - docker-compose up -d
-	  - docker-compose run dockerapp java Login_java.java
+--- 
+dependencies: 
+  pre: 
+    - "sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0/bin/java"
+    - "sudo update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac"
+    - "echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.circlerc"
+    - "sudo apt-get install selenium/base"
+    - "sudo apt-get install selenium/hub"
+    - "sudo apt-get install selenium/standalone-chrome"
+    - "sudo apt-get install selenium/node-chrome-debug"
+    - "sudo apt-get install selenium/node-chrome"
+    - "sudo apt-get install selenium/node-base"
+    - "sudo apt-get install selenium/standalone-chrome-debug"
+    - "sudo apt-get install selenium/standalone-chrome"
+    - "sudo apt-get install selenium/node-chrome-debug"
+    - "sudo apt-get install docker-compose"
+    - "docker run -d -P selenium/standalone-chrome"
+    - "docker run -d -P --name selenium-hub selenium/hub"
+    - "docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug"
+    - "docker run -d -P selenium/standalone-chrome-debug"
+java: 
+  version: "OpenJDK 8"
+machine: 
+  pre: 
+    - "curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0"
+  services: 
+    - docker
