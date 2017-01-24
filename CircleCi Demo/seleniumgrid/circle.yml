@@ -22,8 +22,6 @@ dependencies:
 java: 
   version: 1.8.0_111
 machine: 
-  pre: 
-    - "curl -sSL https://s3.amazonaws.com/circle-downloads/pull-circleci-docker.sh | bash -s -- 1.10.0"
   services: 
     - docker
 test: 
