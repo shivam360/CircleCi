@@ -1,0 +1,30 @@
+--- 
+checkout: 
+  post: 
+    - "git submodule sync"
+    - "git submodule update --init"
+dependencies: 
+  pre: 
+    - "docker pull selenium/base"
+    - "docker pull selenium/hub"
+    - "docker pull selenium/standalone-chrome"
+    - "docker pull selenium/node-chrome-debug"
+    - "docker pull selenium/node-chrome"
+    - "docker pull selenium/node-base"
+    - "docker pull selenium/standalone-chrome-debug"
+    - "docker pull selenium/standalone-chrome"
+    - "docker pull selenium/node-chrome-debug"
+    - "docker pull docker-compose"
+    - "docker run -d -P selenium/standalone-chrome"
+    - "docker run -d -P --name selenium-hub selenium/hub"
+    - "docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug"
+    - "docker run -d -P selenium/standalone-chrome-debug"
+java: 
+  version: 1.8.0_111
+machine: 
+  services: 
+    - docker
+test: 
+  override: 
+    - "docker-compose up -d"
+    - Login_java.java
