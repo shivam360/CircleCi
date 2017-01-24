@@ -1,4 +1,8 @@
 --- 
+checkout: 
+  post: 
+    - "git submodule sync"
+    - "git submodule update --init"
 dependencies: 
   pre: 
     - "docker install selenium/base"
@@ -16,9 +20,13 @@ dependencies:
     - "docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug"
     - "docker run -d -P selenium/standalone-chrome-debug"
 java: 
-  version: "OpenJDK 8"
+  version: OpenJDK8
 machine: 
   pre: 
     - "curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0"
   services: 
     - docker
+test: 
+  override: 
+    - "docker-compose up -d"
+    - Login_java.java
